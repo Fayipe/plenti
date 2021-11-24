@@ -1,0 +1,113 @@
+.indicator {
+    margin: 15px;
+    .line {
+        margin: auto;
+        width: 80px;
+        height: 5px;
+        border-radius: 100px;
+        background-color: #e1e1e1;
+    }
+}
+.burn-head {
+    h3 {
+        font-weight: 600;
+    }
+    h6 {
+        color: rgba(152, 157, 163, 0.5);
+        mix-blend-mode: normal;
+    }
+}
+.action {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0rem 1rem 1rem;
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
+    margin: 10px;
+    border-radius: 1rem;
+    .image {
+        margin-right: 10px;
+        .avatar {
+            --border-radius: none;
+            width: 6rem;
+        }
+    }
+    .details {
+        margin-top: -12px;
+        h3 {
+            font-weight: 600;
+            font-size: 1.7rem;
+        }
+        h6 {
+            margin-top: -5px;
+            font-size: 16px;
+            color: #979da3;
+            opacity: 0.5;
+        }
+    }
+    ion-icon {
+        font-size: 3rem;
+        opacity: 0.8;
+        margin-top: 1rem;
+    }
+}
+ion-item {
+    max-width: 100%;
+    margin-top: 0.78rem;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+}
+ion-input.ios,
+ion-input.md {
+    max-width: 100%;
+    height: 4.35rem;
+    --padding-start: 1.03rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.29;
+    border-radius: 0.43rem;
+    border: 0.25rem solid var(--ion-color-light-tint);
+    --color: var(--ion-color-step-dark1);
+    --placeholder-color: var(--ion-color-step-grey6);
+    --padding-top: 1.2rem;
+    --padding-bottom: 1.3rem;
+}
+
+ion-button.btn {
+    width: 100%;
+    height: 5.12rem;
+    --border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+ion-button.btn.login {
+    margin-top: 2.95rem;
+    --background: linear-gradient(167.09deg, #d12323 0.6%, #750404 117.85%);
+    --border-radius: 2.5rem;
+}
+// * User Experience for input
+ion-item.item-has-focus {
+    ion-input {
+        border-color: var(--ion-color-primary);
+    }
+    ion-label.ios {
+        color: var(--ion-color-primary);
+    }
+}
+div.upload {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+    div.image {
+        img {
+            width: 5rem;
+            margin-right: 1rem;
+        }
+    }
+    div.details {
+        h3 {
+            font-size: 2.5rem;
+        }
+    }
+}

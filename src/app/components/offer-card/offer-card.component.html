@@ -1,0 +1,38 @@
+  <div class="feature-banner" *ngIf="pageType=='home'">
+    <ion-grid>
+      <div class="header">
+        <ion-icon class="see-more" src="assets/images/dove_icon.svg" slot="end"></ion-icon>
+      </div>
+      <ion-row>
+        <ion-col>
+          <div class="chat-illus">
+            <img #img [src]="'assets/images/dove_image.png'" alt="image">
+          </div>
+        </ion-col>
+        <ion-col>
+          <h1>Dove Soap</h1>
+          <h3 class="doc-counsellor">Ends in 30 days</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+<div *ngIf="pageType=='offer'">
+  <div class="feature-banner" *ngFor="let feature of [1,2,3,4]">
+    <ion-grid (click)="gotoVendorDetails()">
+      <div class="header">
+        <ion-icon class="see-more" src="assets/images/dove_icon.svg" slot="end"></ion-icon>
+      </div>
+      <ion-row>
+        <ion-col>
+          <div class="chat-illus">
+            <img #img [src]="'assets/images/dove_image.png'" alt="image">
+          </div>
+        </ion-col>
+        <ion-col>
+          <h1>Dove Soap</h1>
+          <h3 class="doc-counsellor">Ends in 30 days</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Nearby Merchants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="search">
+    <ion-searchbar placeholder="Search for any Merchant..." searchIcon="search" class="pages"></ion-searchbar>
+  </div>
+  <br>
+  <div>
+    <app-nearby-card [nearBys]="nearBys"></app-nearby-card>
+  </div>
+</ion-content>

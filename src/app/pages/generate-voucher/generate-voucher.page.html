@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Burn Points</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="!burnPin">
+    <div class="voucher-head">
+      <h3>Generate Voucher</h3>
+      <h6>Generate a Voucher to Purchase items at any Merchant Store</h6>
+    </div>
+    <div class="voucher-form">
+      <ion-grid class="form-inputs">
+        <ion-row>
+          <ion-col size="12" size-sm="8" offset-sm="2">
+            <form [formGroup]="voucherForm" (ngSubmit)="generateHandler()">
+              <div class="select">
+                <ion-item lines="none">
+                  <ion-label position="stacked">Select Wallet</ion-label>
+                  <ion-select interface="action-sheet" class="wallet" placeholder="Select Wallet"
+                    formControlName="voucher_type">
+                    <ion-select-option value="design">Design</ion-select-option>
+                    <ion-select-option value="law">Law</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+              <div>
+                <ion-item lines="none">
+                  <ion-label position="stacked">Enter Amount</ion-label>
+                  <ion-input type="number" placeholder="Enter Amount" formControlName="amount" required></ion-input>
+                </ion-item>
+              </div>
+              <div class="generate">
+                <ion-button type="submit" [disabled]="!voucherForm.valid || !voucherForm.dirty" class="btn">Generate
+                  Voucher
+                </ion-button>
+              </div>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div *ngIf="burnPin">
+    <app-pin-verify [subHead]="subHead" [pinType]="'burn-pin'" (pinResult)="displayResult($event)"></app-pin-verify>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-toolbar>
+  <ion-buttons slot="start" *ngIf="backBtn">
+    <ion-back-button class="ion-text-capitalize"></ion-back-button>
+  </ion-buttons>
+  <div class="items">
+    <div class="image" *ngIf="profileImage">
+      <img src="assets/images/profile_img.png">
+    </div>
+    <ion-title *ngIf="title">{{title}}</ion-title>
+    <div class="logo ion-text-center" *ngIf="logo">
+      <img src="assets/icon/logo.svg" />
+    </div>
+  </div>
+  <ion-buttons class="buttons" *ngIf="notifBell" slot="end">
+    <ion-button class="notification" (click)="gotoNotification()">
+      <ion-icon class="icon" slot="icon-only" src="assets/icon/notification.svg"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

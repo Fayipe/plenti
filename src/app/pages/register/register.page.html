@@ -1,0 +1,148 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="regType=='verify'">
+    <app-auth-container [authType]="regType" (createPin)="createPinHandler($event)"></app-auth-container>
+  </div>
+  <div *ngIf="regType=='phone-verify'">
+    <app-phone-verify (toVerify)="verifyPhone($event)"></app-phone-verify>
+  </div>
+  <div *ngIf="regType=='create'">
+    <app-pin-verify [pinType]="regType"></app-pin-verify>
+  </div>
+  <div *ngIf="regType=='signup'">
+    <h1 class="ion-text-left">
+      Create an account
+    </h1>
+    <div>
+      <ion-button type="submit" fill="outline" class="btn google">
+        <ion-icon slot="start" src="assets/icon/google-icon.svg"></ion-icon>
+        Sign in with Google
+      </ion-button>
+    </div>
+    <h5 class="ion-text-center or">OR</h5>
+    <form [formGroup]="signupForm" (ngSubmit)="createAccountHandler()">
+      <ion-grid class="form-inputs">
+        <ion-row>
+          <ion-col size="12" size-sm="8" offset-sm="2">
+            <div>
+              <ion-item lines="none">
+                <!-- <ion-label position="stacked">First name</ion-label> -->
+                <ion-input placeholder="First name" formControlName="first_name" type="text"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.first_name">
+                  <div class="error-message" *ngIf="
+                    signupForm.get('first_name').hasError(validation.type) &&
+                    (signupForm.get('first_name').dirty ||
+                      signupForm.get('first_name').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <!-- <ion-label position="stacked">Middle name</ion-label> -->
+                <ion-input placeholder="Middle name" formControlName="middle_name" type="text"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.middle_name">
+                  <div class="error-message" *ngIf="
+                    signupForm.get('middle_name').hasError(validation.type) &&
+                    (signupForm.get('middle_name').dirty ||
+                      signupForm.get('middle_name').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <!-- <ion-label position="stacked">Last name</ion-label> -->
+                <ion-input placeholder="Last name" formControlName="last_name" type="text"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.last_name">
+                  <div class="error-message" *ngIf="
+                    signupForm.get('last_name').hasError(validation.type) &&
+                    (signupForm.get('last_name').dirty ||
+                      signupForm.get('last_name').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+
+            <div>
+              <ion-item lines="none">
+                <!-- <ion-label position="stacked">Email</ion-label> -->
+                <ion-input type="email" inputmode="email" placeholder="example@gmail.com" formControlName="email"
+                  required></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                  <div class="error-message" *ngIf="
+                    signupForm.get('email').hasError(validation.type) &&
+                    (signupForm.get('email').dirty ||
+                      signupForm.get('email').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+
+            <div class="password">
+              <ion-item lines="none">
+                <!-- <ion-label position="stacked">Password</ion-label> -->
+                <ion-input type="{{ type }}" placeholder="******" formControlName="password" required></ion-input>
+              </ion-item>
+              <ion-button fill="clear" type="button" (click)="toggleShowPassword()">
+                <div *ngIf="showPassword">Hide</div>
+                <div *ngIf="!showPassword">Show</div>
+              </ion-button>
+            </div>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.password">
+                <div class="error-message" *ngIf="
+                  signupForm.get('password').hasError(validation.type) &&
+                  (signupForm.get('password').dirty ||
+                    signupForm.get('password').touched)">
+                  <ion-icon name="information-circle-outline"></ion-icon>
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+
+            <div class="ion-text-center signup">
+              <div class="validation-errors ion-text-center">
+                <div class="error-message" *ngIf="error.status == false">
+                  <!-- <ion-icon name="information-circle-outline"></ion-icon> -->
+                  {{ error.message }}
+                </div>
+              </div>
+              <ion-button type="submit" [disabled]="!signupForm.valid  || !signupForm.dirty" class="btn">
+                Register
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <div class="ion-text-center no-account">
+      Already have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoLogin()"><span
+          class="ion-text-capitalize">Login</span></ion-button>
+    </div>
+  </div>
+</ion-content>

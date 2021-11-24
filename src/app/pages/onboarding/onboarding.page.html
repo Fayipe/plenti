@@ -1,0 +1,54 @@
+<ion-content>
+  <div class="ion-text-right">
+    <ion-button class="btn skip-btn" fill="clear" (click)="navigationHandler(true)">
+      Skip
+    </ion-button>
+  </div>
+  <ion-slides pager="true">
+    <ion-slide class="slider">
+      <div class="content">
+        <div class="image">
+          <img src="assets/images/onboard1.svg">
+        </div>
+        <div class="details">
+          <h4 class="title">Shop with ease</h4>
+          <p class="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies velit et eget sed eu, et
+            odio.</p>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide class="slider">
+      <div class="content">
+        <div class="image">
+          <img src="assets/images/onboard2.svg">
+        </div>
+        <div class="details">
+          <h4 class="title">Earn Points and More</h4>
+          <p class="body">Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque
+            nec pharetra id, tempor a
+            tortor. Pellentesque non dignissim neque.</p>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide class="slider">
+      <div class="content">
+        <div class="image">
+          <img src="assets/images/onboard3.svg">
+        </div>
+        <div class="details">
+          <h4 class="title">Enjoy Exclusive Rewards</h4>
+          <p class="body">Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque
+            nec pharetra id, tempor a
+            tortor. Pellentesque non dignissim neque.</p>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <div class="ion-text-right">
+    <ion-button (click)="navigationHandler()" class="btn next-btn" fill="clear" icon-only>
+      <ion-icon src="assets/icon/next.svg"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>

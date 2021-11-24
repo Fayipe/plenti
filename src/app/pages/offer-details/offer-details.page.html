@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <app-header-container [logo]="true" [profileImage]="false" [notifBell]="true" [backBtn]="true"></app-header-container>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!uploadImage">
+    <div class="details ion-text-center">
+      <div class="product-image ion-text-center">
+        <ion-img src="assets/images/offer_img.png"></ion-img>
+        <h3>Dove Beauty Bar</h3>
+      </div>
+      <div class="call">
+        <ion-icon src="assets/icon/call2.svg"></ion-icon>
+        <span>Find Nearby Marchants</span>
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="image">
+        <ion-img src="assets/images/offer_img.png"></ion-img>
+      </div>
+      <div class="description">
+        <h3>Promo by Dove Soaps Company</h3>
+        <h5>This offer expires in 2021-10-30</h5>
+      </div>
+    </div>
+    <br>
+    <div class="about-product">
+      <div class="header">
+        <h4>ABOUT THIS COUPOUN</h4>
+      </div>
+      <div class="body">
+        <p>Offer valid for the following Shoprite outlets: Shoprite Ikeja(ICM), Shoprite Leki, Shoprite , Shoprite
+          Festac,
+          Shoprite Adeniran. With this coupoun you have a maximum discount of 25%.</p>
+      </div>
+    </div>
+    <div class="action">
+      <ion-button (click)="uploadReceipt()" class="btn">Upload Purchase Receipt
+      </ion-button>
+    </div>
+  </div>
+  <div *ngIf="uploadImage">
+    <div class="receipt-image">
+      <img [src]="imageResponse" alt="" />
+      <ion-icon src="assets/icon/close.svg" (click)="deleteImage(imageResponse)"></ion-icon>
+    </div>
+    <div class="go-home">
+      <ion-button type="submit" class="btn">Pay from Bank</ion-button>
+      <span>Back to Home</span>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,90 @@
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    background-image: url("/assets/icon/newTest.svg") !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    ion-title {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+    }
+}
+div.person-imagery {
+    background: var(--ion-color-primary);
+    background-image: url("/assets/icon/newTest.svg") !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom-right-radius: 4rem !important;
+    border-bottom-left-radius: 4rem !important;
+    height: 10rem;
+    padding-top: 6.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    div.user {
+        margin-bottom: 3rem;
+        ion-avatar {
+            margin: 0 auto;
+            width: 9.5rem;
+            height: 9.5rem;
+            top: 6rem;
+            object-fit: contain;
+            border: solid 0.3rem #ffffff;
+        }
+        h2 {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.25;
+            color: var(--ion-color-step-dark2);
+        }
+        h4 {
+            font-size: 9pt;
+            color: #979da3;
+            mix-blend-mode: normal;
+            margin-top: 0.5rem;
+            line-height: 0;
+        }
+    }
+    div.account-pref {
+        hr {
+            margin-left: 1.2rem;
+            margin-right: 1.2rem;
+        }
+        h4 {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--ion-text-color);
+        }
+        ion-item {
+            --padding-start: 2rem;
+            ion-label {
+                h3 {
+                    margin-bottom: 1rem;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 1.38;
+                }
+                p {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    line-height: 1.29;
+                    color: var(--ion-color-step-grey4);
+                }
+            }
+            ion-button {
+                ion-icon {
+                    font-size: 1.9rem;
+                }
+            }
+        }
+    }
+}

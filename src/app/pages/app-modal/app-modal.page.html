@@ -1,0 +1,130 @@
+<ion-header class="ion-no-border">
+  <div class="indicator" (click)="closeModel()">
+    <div class="line"></div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="modalType=='burnPoints'">
+    <div class="ion-text-center burn-head">
+      <h3>Burn Points</h3>
+      <h6>Select any of the option below to burn points</h6>
+    </div>
+    <div>
+      <div class="action" lines="none" (click)="gotoBurnPoint('voucher')">
+        <div class="image">
+          <ion-avatar class="avatar">
+            <img src="assets/icon/promo.svg" alt="" />
+          </ion-avatar>
+        </div>
+        <div class="details">
+          <h3>Generate Voucher</h3>
+          <h6 class="status">Purchase airtime to mobile network</h6>
+        </div>
+        <div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </div>
+      </div>
+      <div class="action" lines="none" (click)="gotoBurnPoint('bill-payment')">
+        <div class="image">
+          <ion-avatar class="avatar">
+            <img src="assets/icon/receipt-snap.svg" alt="" />
+          </ion-avatar>
+        </div>
+        <div class="details">
+          <h3>Pay Bills</h3>
+          <h6 class="status">Purchase airtime to mobile network</h6>
+        </div>
+        <div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="modalType=='redeemOffer'">
+    <div class="ion-text-center burn-head">
+      <h3>Redeem Offers</h3>
+      <h6>Select any of the option below to redeem Offers</h6>
+    </div>
+    <div>
+      <div class="action" lines="none" (click)="inputPromoCode('inputCode')">
+        <div class="image">
+          <ion-avatar class="avatar">
+            <img src="assets/icon/promo.svg" alt="" />
+          </ion-avatar>
+        </div>
+        <div class="details">
+          <h3>Input Promo Code</h3>
+          <h6 class="status">Input promo code to earn points</h6>
+        </div>
+        <div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </div>
+      </div>
+      <div class="action" lines="none" (click)="inputPromoCode('snapReceipt')">
+        <div class="image">
+          <ion-avatar class="avatar">
+            <img src="assets/icon/receipt-snap.svg" alt="" />
+          </ion-avatar>
+        </div>
+        <div class="details">
+          <h3>Snap and Upload Receipt</h3>
+          <h6 class="status">Snap and upload receipts to earn point</h6>
+        </div>
+        <div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="modalType=='inputCode'">
+    <div class="ion-text-center burn-head">
+      <h3>Input Promo Code</h3>
+      <h6>Select any of the option below to redeem Offers</h6>
+    </div>
+    <div>
+      <form [formGroup]="promoCodeForm" (ngSubmit)="redeemOffer(promoCodeForm.value)">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-sm="10" offset-sm="1">
+              <div class="entry">
+                <ion-item lines="none">
+                  <ion-input type="text" placeholder="Enter Promo Code" formControlName="code" required></ion-input>
+                </ion-item>
+              </div>
+              <div class="login">
+                <ion-button type="submit" [disabled]="!promoCodeForm.valid || !promoCodeForm.dirty" class="btn login">
+                  Redeem Offer
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="modalType=='snapReceipt'">
+    <div class="ion-text-center burn-head">
+      <h3>Receipt Upload</h3>
+      <h6>Snap or upload receipt of item brought</h6>
+    </div>
+    <div>
+      <div class="upload" lines="none" (click)="pickImage('Camera')">
+        <div class="image">
+          <img src="assets/icon/camera.svg" alt="" />
+        </div>
+        <div class="details">
+          <h3>Camera</h3>
+        </div>
+      </div>
+      <div class="upload" lines="none" (click)="pickImage('Gallery')">
+        <div class="image">
+          <img src="assets/icon/gallery.svg" alt="" />
+        </div>
+        <div class="details">
+          <h3>Gallery </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

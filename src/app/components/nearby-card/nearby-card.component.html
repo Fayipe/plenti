@@ -1,0 +1,24 @@
+<div class="wrapper" *ngFor="let loyalty of nearBys">
+  <div class="get-started">
+    <ion-grid>
+      <div class="offer ion-text-end">
+        <ion-button> Best Offers</ion-button>
+      </div>
+      <ion-row>
+        <ion-col size="3">
+          <div class="loyalty-img">
+            <img #img [src]="'assets/images/'+loyalty.image" alt="image">
+          </div>
+        </ion-col>
+        <ion-col size="9" (click)="gotoVendorDetails()">
+          <div class="details">
+            <h1>{{loyalty.name}}</h1>
+            <ion-icon src="assets/icon/info_icon.svg"></ion-icon>
+            <h5>{{loyalty.location}}</h5>
+            <h6>{{loyalty.review}}</h6>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

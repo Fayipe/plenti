@@ -1,0 +1,61 @@
+<div>
+  <div class="cabletv-head">
+    <h3>Pay Cable TV Subscription</h3>
+    <h6>Pay your bills by providing the information below.</h6>
+  </div>
+  <div class="cabletv-form">
+    <ion-grid class="form-inputs">
+      <ion-row>
+        <ion-col size="12" size-sm="8" offset-sm="2">
+          <form [formGroup]="cabletvForm" (ngSubmit)="generateHandler()">
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Wallet</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Wallet"
+                  formControlName="voucher_type">
+                  <ion-select-option value="design">Design</ion-select-option>
+                  <ion-select-option value="law">Law</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Provider</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Provider"
+                  formControlName="provider">
+                  <ion-select-option value="mtn">Nepa</ion-select-option>
+                  <ion-select-option value="airtel">Nepally</ion-select-option>
+                  <ion-select-option value="glo">Nepalish</ion-select-option>
+                  <ion-select-option value="etisalat">Nepaliest</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <ion-label position="stacked">cable Number</ion-label>
+                <ion-input type="number" placeholder="Enter cable number" formControlName="cable_number" required>
+                </ion-input>
+              </ion-item>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <ion-label position="stacked">Amount</ion-label>
+                <div class="amounts">
+                  <app-amounts-card class="amount-card"
+                    *ngFor="let amount of (cabletvPrices.length>5?cabletvPrices.slice(0,5):cabletvPrices)"
+                    [amount]="amount" (amountSelected)="setAmount($event)"></app-amounts-card>
+                  <app-amounts-card class="amount-card" *ngIf="cabletvPrices.length>5" [more]="'More'">
+                  </app-amounts-card>
+                </div>
+              </ion-item>
+            </div>
+            <div class="generate">
+              <ion-button type="submit" [disabled]="!cabletvForm.valid || !cabletvForm.dirty" class="btn">Pay Bill
+              </ion-button>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

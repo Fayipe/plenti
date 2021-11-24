@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,244 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// slides.component.scss
+@import '~swiper/swiper';
+@import '~@ionic/angular/css/ionic-swiper';
+
+/* For responsiveness across screens */
+html {
+    font-size: 100%;
+    @media (max-width: 289px) {
+        font-size: 45%;
+    }
+    @media (min-width: 290px) {
+        font-size: 50%;
+    }
+    @media (min-width: 300px) {
+        font-size: 52.5%;
+    }
+    @media (min-width: 320px) {
+        font-size: 55.5%;
+    }
+    @media (min-width: 325px) {
+        font-size: 56.5%;
+    }
+    @media (min-width: 326px) {
+        font-size: 57%;
+    }
+    @media (min-width: 330px) {
+        font-size: 59%;
+    }
+    @media (min-width: 360px) {
+        font-size: 62.5%;
+    }
+    @media (min-width: 411px) {
+        font-size: 70%;
+    }
+    @media (min-width: 500px) {
+        font-size: 85%;
+    }
+    @media (min-width: 720px) {
+        font-size: 100%;
+    }
+    @media (min-width: 1000px) {
+        font-size: 110%;
+    }
+}
+html.ios {
+    @media (max-width: 359px) and (min-width: 320px) {
+        font-size: 59%;
+    }
+}
+ion-content {
+    --background: none;
+    background-image: url("/assets/images/global_bg.svg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // position: absolute;
+}
+/* horizontal lines used in the app */
+hr {
+    display: block;
+    height: 0.1rem;
+    border: 0;
+    border-top: 0.1rem solid #eaeaea;
+    margin: 1em 0;
+    padding: 0;
+}
+hr.fat-divider {
+    height: 0.8rem;
+    background: #e9e5de;
+}
+
+hr.tiny-divider {
+    height: 0.1rem;
+    background: #e9e5de;
+}
+/* searchbar */
+ion-searchbar.sc-ion-searchbar-ios-h.sc-ion-searchbar-ios-s.ios.searchbar-left-aligned.hydrated {
+    margin: -0.1rem 0.54rem 0 0;
+    @media (min-width: 768px) {
+        margin: 0.7rem 0.54rem 0.7rem 0;
+    }
+    padding: 0 1rem 0 0.4rem;
+    --border-radius: 1.6rem;
+    --background: var(--ion-color-searchbar);
+    --box-shadow: none;
+    --color: var(--ion-color-step-dark2);
+    div.searchbar-input-container.sc-ion-searchbar-ios {
+        height: 3.6rem;
+        input.searchbar-input.sc-ion-searchbar-ios {
+            font-size: 1.4rem;
+            line-height: 1.29;
+            letter-spacing: 0.028rem;
+            padding-left: 3rem;
+        }
+        ion-icon.searchbar-search-icon.sc-ion-searchbar-ios.ios.hydrated {
+            width: 1.65rem;
+            height: 1.68rem;
+            left: 0.8rem;
+            top: 1rem;
+        }
+        button.searchbar-clear-button.sc-ion-searchbar-ios {
+            right: 1.3rem;
+            ion-icon {
+                width: 2.2rem;
+                height: 100%;
+            }
+        }
+    }
+}
+ion-searchbar.sc-ion-searchbar-ios-h.sc-ion-searchbar-ios-s.ios.searchbar-left-aligned.hydrated.pages {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 0;
+}
+ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.md.searchbar-left-aligned.hydrated {
+    margin: 0.25rem 0.54rem 0.1rem 0;
+    @media (min-width: 540px) {
+        margin: 0.7rem 0.54rem 0.7rem 0;
+    }
+    padding: 0 1rem 0 0.4rem;
+    --border-radius: 1.6rem;
+    --background: var(--ion-color-searchbar);
+    --box-shadow: none;
+    --color: var(--ion-color-step-dark2);
+    div.searchbar-input-container.sc-ion-searchbar-md {
+        height: 4.6rem;
+        input.searchbar-input.sc-ion-searchbar-md {
+            font-size: 1.4rem;
+            line-height: 1.29;
+            letter-spacing: 0.028rem;
+            height: 4.6rem;
+            padding-top: 0.8rem;
+            padding-left: 4.4rem;
+        }
+        ion-icon.searchbar-search-icon.sc-ion-searchbar-md.md.hydrated {
+            width: 1.65rem;
+            height: 1.68rem;
+            left: 1.6rem;
+            top: 1.6rem;
+        }
+        button.searchbar-clear-button.sc-ion-searchbar-md {
+            right: 1.3rem;
+            ion-icon {
+                width: 2.2rem;
+                height: 100%;
+            }
+        }
+    }
+}
+ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.md.searchbar-left-aligned.hydrated.pages {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-right: 0;
+}
+
+/**
+* UI inside the toolbar
+*/
+ion-back-button.ios {
+    --icon-font-size: 2.8rem;
+    --icon-margin-end: 2rem;
+    color: white;
+}
+ion-back-button.md {
+    --icon-font-size: 2.2rem;
+    color: white;
+}
+ion-title.ios {
+    font-size: 1.7rem;
+}
+ion-title.md {
+    font-size: 2rem;
+}
+
+/**
+* Backdrop to the drawers
+*/
+
+.border-right {
+    border-right: solid 1px #b9b9b9;
+}
+.border-bottom {
+    border-bottom: solid 1px #b9b9b9;
+}
+.border-top {
+    border-top: solid 1px #b9b9b9;
+}
+.mx-auto {
+    --margin-right: auto;
+    --margin-left: auto;
+}
+.mx-2 {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+.ml-2 {
+    margin-left: 0.5rem;
+}
+.mr-3 {
+    margin-right: 1rem;
+}
+.ml-3 {
+    margin-left: 1rem;
+}
+.px-3 {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+[contenteditable] {
+    -webkit-user-select: text;
+    user-select: text;
+}
+.custom-modal {
+    .modal-wrapper {
+        position: absolute;
+        width: 100%;
+        bottom: 0px !important;
+        top: unset;
+        left: 0;
+        right: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .content {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    &.burn-option-modal {
+        --height: 45% !important;
+    }
+    &.upload-modal {
+        --height: 45% !important;
+    }
+}

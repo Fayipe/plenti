@@ -1,0 +1,71 @@
+:host {
+    --bottom-space: 50px;
+}
+ion-content {
+    --background: none;
+    background-image: url("/assets/images/onboarding_bg.svg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    ion-slides {
+        --bullet-background: var(--ion-color-dark-shade);
+        --bullet-background-active: linear-gradient(167.09deg, #d12323 0.6%, #750404 117.85%);
+        height: 80%;
+        .swiper-pagination-bullets {
+            .swiper-pagination-bullet-active {
+                width: 22px !important;
+                height: 8px;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.skip-btn {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #333333;
+}
+.next-btn {
+    font-size: 3.5rem;
+    height: 100%;
+    margin-right: -2rem;
+}
+.slider {
+    padding: 25px;
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .image {
+            max-width: 250px;
+            width: 70%;
+        }
+        .details {
+            .title {
+                font-size: 15pt;
+                font-weight: 900;
+                color: var(--ion-color-dark-shade);
+            }
+            .body {
+                font-size: 10pt;
+                font-weight: 500;
+                color: var(--ion-color-dark-shade);
+            }
+        }
+    }
+}
+
+.slider-button {
+    padding: 25px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 9999;
+    .btn {
+        font-weight: bold;
+    }
+}

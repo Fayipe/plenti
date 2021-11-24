@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    padding: 0 1.5rem;
+    float: right;
+    .see-more {
+        font-size: 3rem;
+    }
+}
+
+div.feature-banner {
+    border: 0.25rem solid var(--ion-color-light-tint);
+    box-shadow: 5px 5px 8px rgb(70 70 70 / 10%);
+    border-radius: 1rem;
+    background: #ffffff;
+    margin-bottom: 10px;;
+    ion-grid {
+        ion-row {
+            margin-top: 1rem;
+            ion-col {
+                h3 {
+                    font-size: 1.328rem;
+                    font-weight: 500;
+                    line-height: 1.25;
+                    text-align: left;
+                    margin-top: 0;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    text-align: left;
+                }
+
+                img {
+                    width: 10rem;
+                    object-fit: contain;
+                }
+            }
+
+            ion-col:first-of-type {
+                padding-left: 5%;
+                // padding-top: 1rem;
+            }
+        }
+    }
+}

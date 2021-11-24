@@ -1,0 +1,30 @@
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    background-image: url("/assets/icon/header_bg.svg") !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom-right-radius: 4rem !important;
+    border-bottom-left-radius: 4rem !important;
+    padding-bottom: 3rem;
+    .items {
+        margin-top: 15px;
+        .image {
+            height: 40px;
+            width: 40px;
+            background: white;
+            padding: 3px;
+            border-radius: 50%;
+            margin-left: 16px;
+            margin-bottom: -4rem;
+            margin-top: 2rem;
+            img {
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+    }
+    .buttons {
+        margin-bottom: -1rem;
+    }
+}

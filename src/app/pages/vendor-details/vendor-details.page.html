@@ -1,0 +1,78 @@
+<ion-content>
+  <div class="content">
+    <ion-back-button class="disable-hover back-button-md show-back-button" (click)="goBack()">
+      <ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img"
+        aria-label="arrow back"></ion-icon>
+    </ion-back-button>
+
+    <img [src]="'assets/images/vendor_img.svg'" (click)="goBack()">
+    <div class="details">
+      <span class="offer">Open Right Now</span>
+      <div class="title">Just Rite</div>
+      <div class="info-area">
+        <div>
+          <div class="prices">(694)
+            <span>4.3 (895 reviews)</span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="call ion-text-center">
+        <p>
+          <ion-icon src="assets/icon/call2.svg"></ion-icon>Call
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="offers">
+    <div class="product">
+      <div class="product-list">
+        <div class="header">
+          <div class="product-head">Ongoing Offers</div>
+          <div class="see-more" (click)="gotoTab('tabs/offers')">View All</div>
+        </div>
+        <div class="offer ion-padding">
+          <app-offer-card class="offer-card" *ngFor="let offer of [1,2,3,4,5].slice(0,3)" [feature]="offer"
+            [pageType]="'home'"></app-offer-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews">
+    <div class="product">
+      <div class="product-list">
+        <div class="header">
+          <div class="product-head">Reviews</div>
+        </div>
+        <!-- <div class="review-body">
+          <div class="review ion-padding">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="5">
+                  <div class="loyalty-img">
+                    <h1>name</h1>
+                  </div>
+                </ion-col>
+                <ion-col size="7">
+                  <ion-progress-bar value="0.5"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="review-result">
+            <h3>4.3/5</h3>
+            <h3>*****</h3>
+            <h5>895 reviews</h5>
+          </div>
+
+        </div> -->
+        <div class="ion-text-justify">
+          <span class="ion-text-left">Name</span>
+          <div>
+            <ion-progress-bar value="0.5"></ion-progress-bar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

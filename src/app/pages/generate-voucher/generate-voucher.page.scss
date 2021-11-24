@@ -1,0 +1,104 @@
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    background-image: url("/assets/icon/newTest.svg") !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom-right-radius: 4rem !important;
+    border-bottom-left-radius: 4rem !important;
+    ion-title {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+    }
+}
+.voucher-head {
+    h3 {
+        font-weight: 600;
+        margin-bottom: -12px;
+    }
+    h6 {
+        color: rgba(152, 157, 163, 0.5);
+        mix-blend-mode: normal;
+    }
+}
+div.voucher-form {
+    ion-select,
+    ion-datetime {
+        max-width: 100%;
+        height: 4.2rem;
+        border-radius: 2.5rem;
+        border: solid 0.13rem #e0e0e0;
+        --padding-start: 2.5rem;
+        margin-top: 0.1rem;
+        padding-right: 1.61rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.54;
+        --placeholder-color: #1d2a30;
+    }
+
+    ion-select.wallet {
+        margin-top: 2.35%;
+        font-weight: 600;
+    }
+
+    ion-select::part(icon) {
+        width: 1.2rem;
+        height: 1.8rem;
+        @media (min-width: 400px) {
+            transform: scale(1.3, 1.6);
+        }
+        @media (min-width: 500px) {
+            transform: scale(1.8, 2.1);
+        }
+    }
+    ion-item {
+        max-width: 100%;
+        margin-top: 0.78rem;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+        ion-label {
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.29;
+            color: var(--ion-color-step-dark1);
+            margin-bottom: 1rem;
+        }
+        ion-label.md {
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        ion-input.ios,
+        ion-input.md {
+            max-width: 100%;
+            height: 4.35rem;
+            --padding-start: 1.03rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.29;
+            border-radius: 2.5rem;
+            border: 0.25rem solid var(--ion-color-light-tint);
+            --color: var(--ion-color-step-dark1);
+            --placeholder-color: var(--ion-color-step-grey6);
+            --padding-top: 1.2rem;
+            --padding-bottom: 1.3rem;
+        }
+    }
+    div.generate {
+        ion-button.btn {
+            width: 100%;
+            height: 5.12rem;
+            --border-radius: 2.5rem;
+            margin-top: 1.95rem;
+            text-transform: capitalize;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.25;
+            --background: linear-gradient(167.09deg, #d12323 0.6%, #750404 117.85%);
+        }
+    }
+}

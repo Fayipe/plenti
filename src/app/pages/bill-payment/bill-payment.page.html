@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Burn Points</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <div *ngIf="billType=='start'">
+    <div class="bill-head">
+      <h3>Bill Payment</h3>
+      <h6>Pay bills and earn points.</h6>
+    </div>
+    <div class="bills">
+      <app-bills-card class="bill-card" *ngFor="let bill of bills" [bill]="bill" [fromPage]="'bill'"
+        (billType)="activatebillType($event)"></app-bills-card>
+    </div>
+  </div>
+  <div *ngIf="billType=='airtime'">
+    <app-airtime-card (billType)="activatebillType($event)" [airtimes]="airtimes">
+    </app-airtime-card>
+  </div>
+  <div *ngIf="billType=='cabletv'">
+    <app-cabletv-card (billType)="activatebillType($event)" [cabletvPrices]="cabletvPrices"></app-cabletv-card>
+  </div>
+  <div *ngIf="billType=='data-bundle'">
+    <app-data-bundle-card (billType)="activatebillType($event)" [dataBundles]="dataBundles"></app-data-bundle-card>
+  </div>
+  <div *ngIf="billType=='electricity'">
+    <app-electricity-card (billType)="activatebillType($event)"></app-electricity-card>
+  </div>
+  <div *ngIf="billType=='pin'">
+    <app-pin-verify [subHead]="subHead" [pinType]="'burn-pin'" (pinResult)="displayResult($event)"></app-pin-verify>
+  </div>
+</ion-content>

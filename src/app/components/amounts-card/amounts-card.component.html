@@ -1,0 +1,19 @@
+<!-- this is the bill card for the home page-->
+<div class="card" *ngIf="!more" [ngClass]="(amount.id === itemSelected)?'selected':'card'">
+  <ion-grid class="ion-text-center" (click)="onItemClicked(amount)">
+    <div class="icons">
+      <h3 class="name">{{amount.name}}</h3>
+    </div>
+    <div class="details">
+      <span class="point">Earn 10P</span>
+    </div>
+  </ion-grid>
+</div>
+<!-- this is the amount card for the more value-->
+<div class="card" *ngIf="more">
+  <ion-grid class="ion-text-center">
+    <div class="more">
+      <h3 class="name">{{more}}</h3>
+    </div>
+  </ion-grid>
+</div>

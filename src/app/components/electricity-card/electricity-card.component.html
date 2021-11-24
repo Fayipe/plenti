@@ -1,0 +1,66 @@
+<div>
+  <div class="electricity-head">
+    <h3>Purchase Internet Data</h3>
+    <h6>Fill the details below to purchase internet bundle from your service provider</h6>
+  </div>
+  <div class="electricity-form">
+    <ion-grid class="form-inputs">
+      <ion-row>
+        <ion-col size="12" size-sm="8" offset-sm="2">
+          <form [formGroup]="electricityForm" (ngSubmit)="generateHandler()">
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Wallet</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Wallet"
+                  formControlName="voucher_type">
+                  <ion-select-option value="design">Design</ion-select-option>
+                  <ion-select-option value="law">Law</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Bill Type</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Electricity Bill Type"
+                  formControlName="bill_type">
+                  <ion-select-option value="mtn">Nepa</ion-select-option>
+                  <ion-select-option value="airtel">Nepally</ion-select-option>
+                  <ion-select-option value="glo">Nepalish</ion-select-option>
+                  <ion-select-option value="etisalat">Nepaliest</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Provider</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Provider"
+                  formControlName="provider">
+                  <ion-select-option value="mtn">Nepa</ion-select-option>
+                  <ion-select-option value="airtel">Nepally</ion-select-option>
+                  <ion-select-option value="glo">Nepalish</ion-select-option>
+                  <ion-select-option value="etisalat">Nepaliest</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <ion-label position="stacked">Meter Number</ion-label>
+                <ion-input type="number" placeholder="Enter meter number" formControlName="meter_number" required></ion-input>
+              </ion-item>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <ion-label position="stacked">Amount</ion-label>
+                <ion-input type="number" placeholder="Enter Amount" formControlName="amount" required></ion-input>
+              </ion-item>
+            </div>
+            <div class="generate">
+              <ion-button type="submit" [disabled]="!electricityForm.valid || !electricityForm.dirty" class="btn">Pay Bill
+              </ion-button>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

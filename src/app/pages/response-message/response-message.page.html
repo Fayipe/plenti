@@ -1,0 +1,72 @@
+<ion-content class="ion-padding">
+  <div class="ion-text-center response" *ngIf="responseType=='bill-success'">
+    <div>
+      <img src="assets/icon/voucher_right.svg" />
+    </div>
+    <div class="forms-box">
+      <h1 class="title">Voucher generation Successfully</h1>
+      <div class="info">
+        <p class="text">You have successfully generated a voucher for your purchase from any of our registered partners
+        </p>
+      </div>
+    </div>
+    <div class="code">
+      <h1>BJ2032</h1>
+      <p>
+        <ion-icon src="assets/icon/copy.svg"></ion-icon>Tap to copy
+      </p>
+    </div>
+    <div class="go-home">
+      <ion-button class="btn" (click)="gotoHome()">Back to Home</ion-button>
+    </div>
+  </div>
+  <div class="ion-text-center response" *ngIf="responseType=='bill-fail'">
+    <div>
+      <img src="assets/icon/voucher_wrong.svg" />
+    </div>
+    <div class="forms-box">
+      <h1 class="title">Voucher generation Failed</h1>
+      <div class="info">
+        <p class="text">Your voucher generation failed due to insufficient fund</p>
+      </div>
+    </div>
+    <div class="code">
+      <h1>BJ2032</h1>
+      <p>
+        <ion-icon src="assets/icon/copy.svg"></ion-icon>Tap to copy
+      </p>
+    </div>
+    <div class="go-home">
+      <ion-button type="submit" class="btn">Pay from Bank</ion-button>
+      <span>Back to Home</span>
+    </div>
+  </div>
+  <div class="ion-text-center redeem-response" *ngIf="responseType=='redeem-success'">
+    <div>
+      <img src="assets/icon/point-win.svg" />
+    </div>
+    <div class="forms-box">
+      <h1 class="title">You have gotten</h1>
+      <h1 class="title point">500</h1>
+      <span class="point-text">points</span>
+    </div>
+    <div class="go-home">
+      <ion-button (click)="gotoHome()" class="btn">Back to Home</ion-button>
+    </div>
+  </div>
+  <div class="ion-text-center redeem-response" *ngIf="responseType=='redeem-fail'">
+    <div>
+      <img src="assets/icon/point-fail.svg" />
+    </div>
+    <div class="forms-box">
+      <h1 class="title">Oopss!</h1>
+      <div class="info">
+        <p class="text">You currently do not qualify to earn this promo point, keep trying to qualify</p>
+      </div>
+    </div>
+    <div class="go-home">
+      <ion-button type="submit" class="btn">Pay from Bank</ion-button>
+      <span>Back to Home</span>
+    </div>
+  </div>
+</ion-content>

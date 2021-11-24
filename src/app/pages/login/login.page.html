@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <h1 class="ion-text-left">
+      Log In
+    </h1>
+    <div>
+      <ion-button type="submit" fill="outline" class="btn google">
+        <ion-icon slot="start" src="assets/icon/google-icon.svg"></ion-icon>
+        Log in with Google
+      </ion-button>
+    </div>
+    <h5 class="ion-text-center or">OR</h5>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+      <ion-grid>
+        <div class="tel-div">
+          <!-- <ion-label>Phone</ion-label> -->
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-select [selectedText]="userSelectedTelCode" interface="popover" class="country-code"
+                  formControlName="country_code" (ionChange)="displayOnlyDialCode()">
+                  <ion-select-option *ngFor="let telCode of telCodes; let i = index" [value]="telCode.dialCode">
+                    {{ telCode.name }} {{ telCode.dialCode }}
+                  </ion-select-option>
+                </ion-select>
+              </ion-col>
+              <ion-col>
+                <ion-input type="tel" inputmode="tel" placeholder="Phone number" formControlName="phone_number"
+                  class="phone" required></ion-input>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.phone_number">
+              <div class="error-message" *ngIf="loginForm.get('phone_number').hasError(validation.type) &&
+                (loginForm.get('phone_number').dirty ||
+                loginForm.get('phone_number').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                {{ validation.message }}`
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <ion-row>
+          <ion-col size="12" size-sm="10" offset-sm="1">
+            <div class="entry">
+              <ion-item lines="none">
+                <ion-label position="stacked">Enter Pin</ion-label>
+                <ion-input type="password" placeholder="****" formControlName="password" required></ion-input>
+              </ion-item>
+            </div>
+            <div class="login">
+              <ion-button type="submit" [disabled]="!loginForm.valid || !loginForm.dirty" class="btn login">Log In
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <div class="ion-text-right forgot-div">
+      <ion-button fill="clear" class="btn-forgot">Forgot Pin?</ion-button>
+    </div>
+    <div class="ion-text-center no-account">
+      Don't have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoSignUp()">Create&nbsp;<span
+          class="ion-text-lowercase">an</span>&nbsp;Account</ion-button>
+    </div>
+  </div>
+  <!-- <div *ngIf="authType=='verify'">
+    <app-auth-container (toLogin)="activateLogin($event)" (createPin)="loginHandler($event)"></app-auth-container>
+  </div> -->
+</ion-content>

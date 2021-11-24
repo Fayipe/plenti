@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+    <app-header-container [logo]="true" [profileImage]="true" [notifBell]="true"></app-header-container>
+</ion-header>
+
+<ion-content>
+    <app-billing-card></app-billing-card>
+    <br>
+    <div class="offers">
+        <div class="product">
+            <div class="product-list">
+                <div class="header">
+                    <div class="product-head">Ongoing Offers</div>
+                    <div class="see-more" (click)="gotoTab('tabs/offers')">View All</div>
+                </div>
+                <div class="offers ion-padding">
+                    <app-offer-card class="offer-card" *ngFor="let offer of [1,2,3,4,5].slice(0,3)" [feature]="offer" [pageType]="'home'"></app-offer-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="offers">
+        <div class="product">
+            <div class="product-list">
+                <div class="header">
+                    <div class="product-head">Bills Payment | <span>Earn more points</span></div>
+                </div>
+                <div class="bills ion-padding">
+                    <app-bills-card class="bill-card" *ngFor="let bill of bills" [bill]="bill" [fromPage]="'home'" (billType)="activatebillType($event)"></app-bills-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="offers">
+        <div class="product">
+            <div class="product-list">
+                <div class="header">
+                    <div class="product-head">Popular Locations Nearby</div>
+                    <div class="see-more" (click)="gotoTab('tabs/nearby')">View All</div>
+                </div>
+                <div class="locations ion-padding">
+                    <app-location-nearby-card class="location-card" *ngFor=" let location of [1,2,3,4]"
+                        [nearbyLocation]="location"></app-location-nearby-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="offers">
+        <div class="product">
+            <div class="product-list">
+                <div class="header">
+                    <div class="product-head">Loyalty History</div>
+                    <div class="see-more" (click)="gotoHistory()">View All</div>
+                </div>
+                <app-loyalty-history [loyalties]="[1,2,3,4]"></app-loyalty-history>
+            </div>
+        </div>
+    </div>
+    <br>
+</ion-content>

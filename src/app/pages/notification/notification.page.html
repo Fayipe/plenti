@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">notification</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="ion-text-capitalize"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="notification">
+    <div *ngFor="let notification of notifications">
+      <h3>{{notification?.date}}</h3>
+      <app-notification-card [notifications]="notification.data"></app-notification-card>
+    </div>
+  </div>
+</ion-content>

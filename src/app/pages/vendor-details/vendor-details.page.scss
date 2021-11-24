@@ -1,0 +1,152 @@
+.content {
+    position: relative;
+    // overflow: hidden;
+    img {
+        width: 100%;
+        max-height: 250px;
+        display: block;
+        object-fit: cover;
+    }
+    .back-button-md {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .details {
+        position: absolute;
+        text-align: left;
+        left: 20px;
+        top: 18rem;
+        height: 15rem;
+        width: 88%;
+        padding: 9px 12px;
+        color: black;
+        background: white;
+        border-radius: 1rem;
+        filter: drop-shadow(8px 2px 12px rgba(91, 91, 91, 0.141));
+
+        .offer {
+            float: right;
+            font-size: 0.9rem;
+            padding: 3px;
+            // margin: -4px 0px 0 0;
+            border-top-right-radius: 0.4rem;
+            color: #750404;
+            font-weight: 600;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .info-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .prices {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: grey;
+
+                span {
+                    color: #9d9d9d;
+                }
+            }
+        }
+        .call {
+            font-size: 1.5rem;
+            font-weight: 600;
+            ion-icon {
+                font-size: 4rem;
+                margin-bottom: -1.7rem;
+                margin-right: 10px;
+                margin-top: 13px;
+            }
+        }
+    }
+}
+.offers {
+    margin-top: 13rem;
+    .product {
+        .product-list {
+            &:last-child {
+                border-bottom: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding: 0 1.5rem;
+
+                .product-head {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.67;
+                    span {
+                        font-weight: 350;
+                        opacity: 0.7;
+                        font-size: 1.7rem;
+                    }
+                }
+
+                .see-more {
+                    text-align: right;
+                    font-weight: 500;
+                    color: #750404;
+                    margin-right: 0;
+                    font-size: 11pt;
+                }
+            }
+            .bills,
+            .locations,
+            .offer {
+                overflow-x: scroll;
+                white-space: nowrap;
+                .bill-card,
+                .location-card,
+                .offer-card {
+                    margin-right: 15px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+.reviews {
+    margin-top: 3rem;
+    .product {
+        .product-list {
+            &:last-child {
+                border-bottom: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1.5rem;
+
+                .product-head {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.67;
+                    span {
+                        font-weight: 350;
+                        opacity: 0.7;
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+            .review-body {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .review {
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

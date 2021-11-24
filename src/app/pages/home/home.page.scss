@@ -1,0 +1,50 @@
+:host {
+    background: #f9f9f9;
+}
+.offers {
+    .product {
+        .product-list {
+            &:last-child {
+                border-bottom: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding: 0 1.5rem;
+
+                .product-head {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.67;
+                    span {
+                        font-weight: 350;
+                        opacity: 0.7;
+                        font-size: 1.7rem;
+                    }
+                }
+
+                .see-more {
+                    text-align: right;
+                    font-weight: 500;
+                    color: #750404;
+                    margin-right: 0;
+                    font-size: 11pt;
+                }
+            }
+            .bills,
+            .locations,
+            .offers {
+                overflow-x: scroll;
+                white-space: nowrap;
+                .bill-card,
+                .location-card,
+                .offer-card {
+                    margin-right: 15px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

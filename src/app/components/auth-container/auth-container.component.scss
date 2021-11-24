@@ -1,0 +1,95 @@
+.main {
+    margin-top: 2rem;
+    .title {
+        font-weight: 600;
+        text-align: left;
+        line-height: 1.29;
+        color: var(--ion-color-dark);
+    }
+
+    .forms-box {
+        .info {
+            .text {
+                font-size: 10pt;
+                margin-bottom: 0px;
+                color: #828282;
+            }
+        }
+        .form {
+            margin: 30px 10px 0 10px;
+            display: flex;
+            ion-item {
+                color: var(--ion-color-secondary);
+                max-width: 100px;
+                margin-bottom: 30px;
+                margin-left: 0px;
+                font-weight: 500;
+                font-size: 30pt;
+                text-align: center;
+                ion-input.ios,
+                ion-input.md {
+                    height: 5.35rem;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    line-height: 1.29;
+                    border-radius: 1rem;
+                    border: 0.25rem solid #dbdbdb;
+                    --color: var(--ion-color-step-dark1);
+                    --placeholder-color: var(--ion-color-step-grey6);
+                    --padding-top: 1.2rem;
+                    --padding-bottom: 1.3rem;
+
+                    background: #f7f7f7;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        .action {
+            margin-bottom: 1rem;
+            .btn {
+                --padding-top: 25px;
+                --padding-bottom: 25px;
+                --box-shadow: none;
+                --background: linear-gradient(167.09deg, #d12323 0.6%, #750404 117.85%);
+                --border-radius: 2.5rem;
+            }
+        }
+
+        div.forgot-div {
+            margin-top: -2rem;
+            margin-bottom: 4rem;
+            margin-right: -2rem;
+        }
+
+        div.no-account {
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.62;
+            color: #adadad;
+            margin-top: 4.667%;
+            margin-bottom: 4%;
+        }
+
+        .btn {
+            &-forgot {
+                width: 40%;
+                height: 1.7rem;
+                font-size: 1.3rem;
+                font-weight: 500;
+                line-height: 1.62;
+                text-transform: capitalize;
+                --color: #750404;
+            }
+
+            &-create-account {
+                height: 1.7rem;
+                font-size: 1.3rem;
+                font-weight: 500;
+                line-height: 1.62;
+                text-transform: capitalize;
+                margin: -0.9rem 0 0 -1.3rem;
+                --color: #750404;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    background-image: url("/assets/icon/newTest.svg") !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom-right-radius: 4rem !important;
+    border-bottom-left-radius: 4rem !important;
+    ion-title {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+    }
+}
+.notification {
+    h3 {
+        margin: 2rem;
+        font-weight: 600;
+        color: #9d9d9d;
+    }
+}

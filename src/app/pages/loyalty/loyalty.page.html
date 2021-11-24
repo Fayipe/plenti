@@ -1,0 +1,15 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Loyalty</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="search">
+    <ion-searchbar placeholder="Search for any Merchant..." searchIcon="search" class="pages"></ion-searchbar>
+  </div>
+  <br>
+  <div>
+    <app-loyalty-card [loyalties]="loyalties"></app-loyalty-card>
+  </div>
+</ion-content>

@@ -1,0 +1,83 @@
+<div class="main" *ngIf="authType=='pin'">
+  <h1 class="title">Welcome back,<br> Shalom! </h1>
+  <div class="forms-box">
+    <div class="info">
+      <p class="text">Enter your PIN</p>
+    </div>
+    <form class="form">
+      <ion-item lines="none">
+        <ion-input #input1 [autofocus]="true" (keyup)="input2.setFocus()" (keyup)="handleKeyEvent($event,input1,input1)"
+          placeholder="*" [maxlength]="1" required type="tel"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input2 (keyup)="input3.setFocus()" (keyup)="handleKeyEvent($event,input2,input1)" placeholder="*"
+          [maxlength]="1" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input3 placeholder="*" [maxlength]="1" (keyup)="input4.setFocus()"
+          (keyup)="handleKeyEvent($event,input1,input1)" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input4 placeholder="*" [maxlength]="1" (keyup)="handleKeyEvent($event,input1,input1)" required
+          type="tel">
+        </ion-input>
+      </ion-item>
+    </form>
+    <div class="ion-text-right forgot-div">
+      <ion-button fill="clear" class="btn-forgot">Forgot Pin?</ion-button>
+    </div>
+    <div class="action">
+      <ion-button (click)="loginAccount()" class="btn ion-text-capitalize" expand="block" fill="solid">
+        Log in
+      </ion-button>
+    </div>
+    <div class="ion-text-center no-account">
+      Don't have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoLogin()">Login New User</ion-button>
+    </div>
+  </div>
+</div>
+<div class="main" *ngIf="authType=='verify'">
+  <h1 class="title">Phone Verification</h1>
+  <div class="forms-box">
+    <div class="info">
+      <p class="text">Hold on a Sec! We sent a verification code to your number +234-8134567890 and email address
+        johndoe@gmail.com Change</p>
+    </div>
+    <form class="form">
+      <ion-item lines="none">
+        <ion-input #input1 [autofocus]="true" (keyup)="input2.setFocus()" (keyup)="handleKeyEvent($event,input1,input1)"
+          placeholder="*" [maxlength]="1" required type="tel"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input2 (keyup)="input3.setFocus()" (keyup)="handleKeyEvent($event,input2,input1)" placeholder="*"
+          [maxlength]="1" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input3 placeholder="*" [maxlength]="1" (keyup)="input4.setFocus()"
+          (keyup)="handleKeyEvent($event,input1,input1)" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input4 placeholder="*" [maxlength]="1" (keyup)="handleKeyEvent($event,input1,input1)" required
+          type="tel">
+        </ion-input>
+      </ion-item>
+    </form>
+    <div class="ion-text-right forgot-div">
+      <ion-button fill="clear" class="btn-forgot">Forgot Pin?</ion-button>
+    </div>
+    <div class="action">
+      <ion-button (click)="verifyPhone()" class="btn ion-text-capitalize" expand="block" fill="solid">
+        Verify Phone
+      </ion-button>
+    </div>
+    <div class="ion-text-center no-account">
+      Don't have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoLogin()">Login New User</ion-button>
+    </div>
+  </div>
+</div>

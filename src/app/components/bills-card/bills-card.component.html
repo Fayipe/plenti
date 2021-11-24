@@ -1,0 +1,23 @@
+<!-- this is the bill card for the home page-->
+<div class="card" *ngIf="fromPage=='home'">
+  <ion-grid class="ion-text-center" (click)="selectBill(bill.slug)">
+    <div class="icons">
+      <ion-icon class="icon" [src]="'assets/icon/'+bill.icon"></ion-icon>
+    </div>
+    <div class="details">
+      <h3 class="name">{{bill.name}}</h3>
+    </div>
+  </ion-grid>
+</div>
+
+<!-- this is the bill card for the bill-payment page-->
+<div class="pay-card" *ngIf="fromPage=='bill'">
+  <ion-grid (click)="selectBill(bill.slug)">
+    <div class="icons ion-text-left">
+      <ion-icon class="icon" [src]="'assets/icon/'+bill.icon"></ion-icon>
+    </div>
+    <div class="details ion-text-right">
+      <h3 class="name">{{bill.name}}</h3>
+    </div>
+  </ion-grid>
+</div>

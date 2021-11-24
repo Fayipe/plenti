@@ -1,0 +1,116 @@
+<div class="main" *ngIf="pinType=='create'">
+  <h1 class="title">Create PIN</h1>
+  <div class="forms-box">
+    <div class="info">
+      <p class="text">Create a 4-digit PIN for your Pro FlipCart account</p>
+    </div>
+    <form class="form">
+      <ion-item lines="none">
+        <ion-input #input1 [autofocus]="true" (keyup)="input2.setFocus()" (keyup)="handleKeyEvent($event,input1,input1)"
+          placeholder="*" [maxlength]="1" required type="tel"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input2 (keyup)="input3.setFocus()" (keyup)="handleKeyEvent($event,input2,input1)" placeholder="*"
+          [maxlength]="1" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input3 placeholder="*" [maxlength]="1" (keyup)="input4.setFocus()"
+          (keyup)="handleKeyEvent($event,input1,input1)" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input4 placeholder="*" [maxlength]="1" (keyup)="handleKeyEvent($event,input1,input1)" required
+          type="tel">
+        </ion-input>
+      </ion-item>
+    </form>
+    <div class="ion-text-right forgot-div">
+      <ion-button fill="clear" class="btn-forgot">Forgot Pin?</ion-button>
+    </div>
+    <div class="action">
+      <ion-button (click)="createPin()" class="btn ion-text-capitalize" expand="block" fill="solid">
+        Create Pin
+      </ion-button>
+    </div>
+    <div class="ion-text-center no-account">
+      Don't have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoLogin()">Login New User</ion-button>
+    </div>
+  </div>
+</div>
+<div class="main" *ngIf="pinType=='confirm'">
+  <h1 class="title">Confirm PIN</h1>
+  <div class="forms-box">
+    <div class="info">
+      <p class="text">Create a 4-digit PIN for your Pro FlipCart account</p>
+    </div>
+    <form class="form">
+      <ion-item lines="none">
+        <ion-input #input1 [autofocus]="true" (keyup)="input2.setFocus()" (keyup)="handleKeyEvent($event,input1,input1)"
+          placeholder="*" [maxlength]="1" required type="tel"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input2 (keyup)="input3.setFocus()" (keyup)="handleKeyEvent($event,input2,input1)" placeholder="*"
+          [maxlength]="1" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input3 placeholder="*" [maxlength]="1" (keyup)="input4.setFocus()"
+          (keyup)="handleKeyEvent($event,input1,input1)" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input4 placeholder="*" [maxlength]="1" (keyup)="handleKeyEvent($event,input1,input1)" required
+          type="tel">
+        </ion-input>
+      </ion-item>
+    </form>
+    <div class="ion-text-right forgot-div">
+      <ion-button fill="clear" class="btn-forgot">Forgot Pin?</ion-button>
+    </div>
+    <div class="action">
+      <ion-button (click)="confirmPin()" class="btn ion-text-capitalize" expand="block" fill="solid">
+        Confirm
+      </ion-button>
+    </div>
+    <div class="ion-text-center no-account">
+      Don't have an account?
+      <ion-button fill="clear" class="btn-create-account" (click)="gotoLogin()">Login New User</ion-button>
+    </div>
+  </div>
+</div>
+<div class="main" *ngIf="pinType=='burn-pin'">
+  <div class="forms-box">
+    <div class="info">
+      <p class="pin-text" [innerHTML]="subHead"></p>
+    </div>
+    <form class="form">
+      <ion-item lines="none">
+        <ion-input #input1 [autofocus]="true" (keyup)="input2.setFocus()" (keyup)="handleKeyEvent($event,input1,input1)"
+          placeholder="*" [maxlength]="1" required type="tel"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input2 (keyup)="input3.setFocus()" (keyup)="handleKeyEvent($event,input2,input1)" placeholder="*"
+          [maxlength]="1" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input3 placeholder="*" [maxlength]="1" (keyup)="input4.setFocus()"
+          (keyup)="handleKeyEvent($event,input1,input1)" required type="tel">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input #input4 placeholder="*" [maxlength]="1" (keyup)="handleKeyEvent($event,input1,input1)" required
+          type="tel">
+        </ion-input>
+      </ion-item>
+
+    </form>
+    <div class="action">
+      <ion-button (click)="confirmBurnPin()" class="btn ion-text-capitalize" expand="block" fill="solid">
+        Confirm
+      </ion-button>
+    </div>
+  </div>
+</div>

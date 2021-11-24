@@ -1,0 +1,82 @@
+<div>
+  <div class="data-head">
+    <h3>Purchase Internet Data</h3>
+    <h6>Fill the details below to purchase internet bundle from your service provider</h6>
+  </div>
+  <div class="bill-form">
+    <ion-grid class="form-inputs">
+      <ion-row>
+        <ion-col size="12" size-sm="8" offset-sm="2">
+          <form [formGroup]="dataBundleForm" (ngSubmit)="generateHandler()">
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Wallet</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Wallet"
+                  formControlName="voucher_type">
+                  <ion-select-option value="design">Design</ion-select-option>
+                  <ion-select-option value="law">Law</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="select">
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Network</ion-label>
+                <ion-select interface="action-sheet" class="wallet" placeholder="Select Network"
+                  formControlName="network">
+                  <ion-select-option value="mtn">Mtn</ion-select-option>
+                  <ion-select-option value="airtel">Airtel</ion-select-option>
+                  <ion-select-option value="glo">Glo</ion-select-option>
+                  <ion-select-option value="etisalat">Etisalat</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="tel-div">
+              <ion-label position="stacked">Phone</ion-label>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="4">
+                    <ion-select [selectedText]="userSelectedTelCode" interface="popover" class="country-code"
+                      formControlName="country_code" (ionChange)="displayOnlyDialCode()">
+                      <ion-select-option *ngFor="let telCode of telCodes; let i = index" [value]="telCode.dialCode">
+                        {{ telCode.name }} {{ telCode.dialCode }}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-col>
+                  <ion-col>
+                    <ion-input type="tel" inputmode="tel" placeholder="Phone number" formControlName="phone_number"
+                      class="phone" required></ion-input>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.phone_number">
+                  <div class="error-message" *ngIf="dataBundleForm.get('phone_number').hasError(validation.type) &&
+                    (dataBundleForm.get('phone_number').dirty ||
+                    dataBundleForm.get('phone_number').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation.message }}`
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div>
+              <ion-item lines="none">
+                <ion-label position="stacked">Select Amount</ion-label>
+                <!-- <ion-input type="number" placeholder="Enter Amount" formControlName="amount" required></ion-input> -->
+                <div class="amounts">
+                  <app-amounts-card class="amount-card"
+                    *ngFor="let amount of (dataBundles.length>5?dataBundles.slice(0,5):dataBundles)" [amount]="amount" (amountSelected)="setAmount($event)"></app-amounts-card>
+                  <app-amounts-card class="amount-card" *ngIf="dataBundles.length>5" [more]="'More'"></app-amounts-card>
+                </div>
+              </ion-item>
+            </div>
+            <div class="generate">
+              <ion-button type="submit" [disabled]="!dataBundleForm.valid || !dataBundleForm.dirty" class="btn">Buy Bundle
+              </ion-button>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

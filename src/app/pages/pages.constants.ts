@@ -1,0 +1,22 @@
+export const ONBOARDING = 'onboading';
+export const START_PAGE = 'start-page';
+export const LOGIN = 'login';
+export const SIGNUP = 'register';
+export const SIGNUP_NGO = 'signup-ngo';
+export const SIGNUP_VERIFY = 'signup-verify';
+export const NOTIFICATION = 'notification';
+export const GENERATE_VOUCHER = 'generate-voucher';
+export const BILL_PAYMENT = 'bill-payment';
+export const LOYALTY_HISTORY_PAGE = 'loyalty-histories';
+export const RESPONSE_MESSAGE_PAGE = 'response-message';
+export const VENDOR_DETAILS_PAGE = 'vendor-details';
+export const OFFER_DETAILS_PAGE = 'offer-details';
+export const LOYALTY_DETAILS_PAGE = 'loyalty-details';
+export const UPLOAD_MODAL = 'upload-modal';
+
+export const TABS = 'tabs';
+export const HOME = 'home';
+export const NEARBY = 'nearby';
+export const OFFERS = 'offers';
+export const LOYALTY = 'loyalty';
+export const PROFILE = 'profile';
